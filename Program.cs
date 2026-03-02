@@ -1,7 +1,21 @@
+using System.Collections.Generic;
+using OpenAI.Chat;
 using Microsoft.EntityFrameworkCore;
 using TodoApi.Data;
+using TodoApi;
+
 
 var builder = WebApplication.CreateBuilder(args);
+var apiKey = Environment.GetEnvironmentVariable("OPENAI_API_KEY");
+if (string.IsNullOrWhiteSpace(apiKey))
+{
+    throw new Exception("OPENAI_API_KEY bulunamadı. Environment variable ayarlı mı?");
+}
+
+builder.Services.AddSingleton(new ChatClient(
+    model: "gpt-5-mini",
+    apiKey: apiKey
+));
 
 // Add services to the container.
 
