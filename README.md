@@ -1,83 +1,77 @@
-# Todo API (ASP.NET Core Web API)
+# TodoApi (ASP.NET Core Web API)
 
-A RESTful Todo API built with ASP.NET Core.  
-This project demonstrates layered architecture, Service Layer usage, Dependency Injection, and Entity Framework Core with SQLite.
-The API follows REST principles and demonstrates basic backend development best practices.
-
-## Tech Stack
-
-- ASP.NET Core Web API
-- Entity Framework Core (Code-First)
-- SQLite
-- Swagger / OpenAPI
-- Service Layer Architecture
-- Dependency Injection
+A RESTful Todo API built with ASP.NET Core and Entity Framework Core (SQLite).  
+This project demonstrates layered architecture, dependency injection, and OpenAI-powered AI endpoints for task suggestion and motivational sentence generation.
 
 ## Features
 
 - CRUD operations for Todo items
-- EF Core Migrations
-- SQLite database integration
+- AI-based task suggestion generation
+- AI-based motivational sentence generation
 - Layered architecture (Controller / Service / Data)
-- AI suggestion endpoint (mock implementation)
-- Swagger UI for endpoint testing
+- Entity Framework Core (Code-First) with SQLite
+- Swagger (OpenAPI) integration
+
+## Technologies
+
+- ASP.NET Core Web API
+- Entity Framework Core
+- SQLite
+- OpenAI Chat Client SDK
+- Swagger / Swashbuckle
 
 ## API Endpoints
 
-### Todo Endpoints
+### AI Endpoints
 
-- GET /api/todos
-- GET /api/todos/{id}
-- POST /api/todos
-- PUT /api/todos/{id}
-- DELETE /api/todos/{id}
-
-### AI Suggest Endpoint
-
-POST /api/ai/suggest
-
-Generates structured todo suggestions from free text input.
+#### POST /api/ai/suggest  
+Generates structured task suggestions from free-text input.
 
 Example request:
-
+```json
 {
   "text": "Today I will work on my backend project and go to the gym"
 }
 
 Example response:
-
+```json
 {
   "items": [
-    "Go to gym (45 min session)",
     "Work on backend project",
-    "Start with the most difficult task",
-    "Use Pomodoro technique"
+    "Go to the gym",
+    "Review daily goals",
+    "Check emails",
+    "Plan tomorrow's tasks"
   ]
 }
+```
+## Run Locally
 
-## Architecture
+Clone the repository:
 
-The project follows a layered structure:
+```bash
+git clone https://github.com/KaanBora24/TodoApi.git
+cd TodoApi
+```
 
-- Controllers: Handle HTTP requests
-- Services: Business logic layer
-- Data: Database context configuration
-- Models: Entity definitions
+Restore dependencies:
 
-## How to Run
+```bash
+dotnet restore
+```
 
-1. Clone the repository
-2. Open the solution in Visual Studio
-3. Run the project
-4. Swagger UI will open automatically
-5. Test endpoints via Swagger
+Apply database migrations:
 
-## Purpose
+```bash
+dotnet ef database update
+```
 
-This project was developed to practice:
+Run the project:
 
-- Backend development with ASP.NET Core
-- Clean architecture principles
-- EF Core Code-First migrations
-- REST API design
-- Service Layer implementation
+```bash
+dotnet run
+```
+
+Swagger UI will be available at:
+
+https://localhost:7145/swagger
