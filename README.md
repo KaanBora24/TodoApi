@@ -75,6 +75,5 @@ Run the project:
 dotnet run
 ```
 
-Swagger UI will be available at:
 
 Swagger UI will be available at: https://localhost:{port}/swagger
