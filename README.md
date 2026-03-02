@@ -2,6 +2,7 @@
 
 A RESTful Todo API built with ASP.NET Core.  
 This project demonstrates layered architecture, Service Layer usage, Dependency Injection, and Entity Framework Core with SQLite.
+The API follows REST principles and demonstrates basic backend development best practices.
 
 ## Tech Stack
 
