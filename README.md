@@ -77,4 +77,4 @@ dotnet run
 
 Swagger UI will be available at:
 
-https://localhost:7145/swagger
+Swagger UI will be available at: https://localhost:{port}/swagger
