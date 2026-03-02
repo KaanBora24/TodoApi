@@ -28,7 +28,9 @@ This project demonstrates layered architecture, dependency injection, and OpenAI
 Generates structured task suggestions from free-text input.
 
 Example request:
+
 ```json
+
 {
   "text": "Today I will work on my backend project and go to the gym"
 }
